@@ -1,0 +1,23 @@
+# src/MagBundle/Resources/config/doctrine/books.orm.yml
+MagBundle\Entity\books:
+    type: entity
+    table: books
+    id:
+        id:
+            type: integer
+            generator: { strategy: AUTO }
+    fields:
+        book:
+            type: string
+            length: 32
+        author:
+            type: string
+            lenght: 32
+        description:
+            type: text
+        year:
+            type: string
+            lenght: 10
+        wallper:
+            type: text
+        

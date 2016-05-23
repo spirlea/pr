@@ -1,0 +1,16 @@
+ 
+<body>
+<div>
+{% for bk in data.book %}
+         <div class="col-md-3" style="border: 2px solid red;">
+             
+             <img src="{{asset(bk.wallper)}}">
+             <p ><strong>Book:</strong><span>{{bk.book}}</span></p>
+             <p ><strong>Author:</strong><span>{{bk.author}}</span></p>
+             <p ><strong>Description:</strong><span>{{bk.description}}</span></p>
+             <p ><strong>Relase Date:</strong><span>{{bk.year}}</span></p>
+      
+     </div>
+         {%endfor%}
+</div>
+ </body>        

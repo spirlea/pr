@@ -1,0 +1,400 @@
+
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
+    <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+
+    <link href="{{ asset('css/style.css')}}" rel="stylesheet"/>
+</head>
+
+<body>
+
+    <nav class="navbar navbar-default">
+        <div class="container-fluid">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="#">CIPCShopOnline</a>
+            </div>
+
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                <ul class="nav navbar-nav">
+                    <li  class="dropdown">
+                        <a class="dropdown-toggle" data-toggle="dropdown" href="#">Products
+                            <span class="caret"></span></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="#">All</a></li>
+                            <li><a href="#">Books</a></li>
+                            <li><a href="#">Computers</a></li>
+                            <li><a href="#">Phones</a></li> 
+                            <li><a href="#">Periferics</a></li> 
+                        </ul>
+                    </li>
+
+                    <li ><a href="#">Most Popular</a></li>
+
+                </ul>
+                <form class="navbar-form navbar-left" role="search">
+                    <div class="form-group">
+                        <input type="text" class="form-control" placeholder="Search">
+                    </div>
+                    <button type="submit" class="btn btn-default">Submit</button>
+                </form>
+                <ul class="nav navbar-nav navbar-right">
+                    <li ><a href="#"><span class="glyphicon glyphicon-shopping-cart">Cart</span></a></li>
+                    {% if (app.request.cookies.has('id') or app.request.session.has('id') ) %}<li>exit</li>
+                        {%else%}
+
+
+                        <li class="nav-button"><button class="btn btn-primary navbar-btn" id="btnreg"  data-toggle="modal" data-target="#LoginModal" id="LoginButton">
+                                <span class="glyphicon glyphicon-log-in"> </span> Log in
+                            </button>
+                        </li>
+
+
+
+                        <li class="nav-button"><button class="btn btn-primary navbar-btn" data-toggle="modal" data-target="#RegistrationModal" id="RegButton">
+                                <span class="glyphicon glyphicon-user"></span>   Registration
+                            </button>
+                        </li>
+
+
+                    {% endif %}
+                </ul>
+
+
+            </div><!-- /.navbar-collapse -->
+        </div><!-- /.container-fluid -->
+    </nav>
+
+
+    {% if  app.session.flashbag.has('LoginFlashBag') == null %}
+        <div class="modal fade"  id="LoginModal" tabindex="-1" role="dialog" aria-labelledby="LoginModalLabel" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+
+                    <div class="modal-header">
+                        <button type="button" id="close" class="close" data-dismiss="modal" aria-hidden="true">x</button>
+                        <h4 class="modal-title" id="LoginModalLabel">Log in</h4>
+                    </div> 
+
+                    <div class="modal-body" id="modal">
+                        <form role="form" method="POST" action="{{asset('check_login')}}">
+                            <div class="form-group">
+                                <div class="input-group">
+                                    <input name="login" type="text" class="form-control" id="uLogin" placeholder="Login" required>
+                                    <label for="uLogin" class="input-group-addon glyphicon glyphicon-user"></label>  
+
+                                </div>
+                            </div> 
+
+                            <div class="form-group">
+                                <div class="input-group">
+                                    <input name="pass" type="password" class="form-control" id="uPassword" placeholder="Password" required>
+                                    <label for="uPassword" class="input-group-addon glyphicon glyphicon-lock"></label>
+                                </div> 
+                            </div> 
+
+                            <div class="checkbox">
+                                <label>
+
+                                    <input type="checkbox" name="remember" > Remember me
+                                </label>
+                            </div> 
+                            <div class="modal-footer">
+                                <input type="submit"  class="form-control btn btn-primary btn-block" value="Log In">
+
+                            </div> 
+                        </form>            
+                    </div>
+                </div>
+            </div>
+        </div>     
+    {% else %}
+        <div class="modal fade"  id="LoginModal" tabindex="-1" role="dialog" aria-labelledby="LoginModalLabel" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+
+                    <div class="modal-header">
+                        <button type="button" id="close" class="close" data-dismiss="modal" aria-hidden="true">x</button>
+                        <h4 class="modal-title" id="LoginModalLabel">Log in</h4>
+                    </div> 
+
+                    <div class="modal-body" id="modal">
+                        <form role="form" method="POST" action="{{asset('check_login')}}">
+                            <div class="form-group">
+                                <div class="input-group">
+                                    {% for flashMessage in app.session.flashbag.get('LoginFlashBag') %}
+                                        <input value="{{flashMessage}}" name="login" type="text" class="form-control" id="uLogin" placeholder="Login" required>
+                                    {%endfor%}
+                                   
+
+
+
+
+
+                                    <label for="uLogin" class="input-group-addon glyphicon glyphicon-user"></label>  
+
+                                </div>
+                            </div> 
+
+                            <div class="form-group">
+                                <div class="input-group">
+                                    <input name="pass" type="password" class="form-control" id="uPassword" placeholder="Password" required>
+                                    <label for="uPassword" class="input-group-addon glyphicon glyphicon-lock"></label>
+                                </div> 
+                            </div> 
+
+                            <div class="checkbox">
+                                <label>
+
+                                    <input type="checkbox" name="remember" > Remember me
+                                </label>
+                            </div> 
+                            <div class="modal-footer">
+                                <input type="submit"  class="form-control btn btn-primary btn-block" value="Log In">
+
+                            </div> 
+                        </form>            
+                    </div>
+                </div>
+            </div>
+        </div> 
+                                    
+                                     
+    {% endif %}
+    {% if  app.session.flashbag.has('RegSuccessFlashBag') == null %}
+        <div class=" modal fade"  id="RegistrationModal" tabindex="-1" role="dialog" aria-labelledby="RegistrationModalLabel" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+
+                    <div class="modal-header">
+                        <button type="button" id="close" class="close" data-dismiss="modal" aria-hidden="true">x</button>
+                        <h4 class="modal-title" id="RegistrationModalLabel"> Registration     </h4>
+                    </div> 
+
+
+
+                    <div class="modal-body" id="modal">
+                        <form role="form" method="POST" action="{{asset('check_reg')}}" onsubmit="return myFunction()">
+
+
+                            <div class="form-group">
+
+                                <div class="input-group">
+                                    <input maxlength="15" type="text" name="firstname" class="form-control" id="rFirstname" placeholder="Firstname" required>
+                                    <label for="uFirstname" class="input-group-addon glyphicon glyphicon-user"></label> 
+                                </div> </div> 
+                            <div class="form-group">
+                                <div class="input-group">
+                                    <input maxlength="15" type="text" name="lastname" class="form-control" id="rLastname" placeholder="Lastname" required>
+                                    <label for="uLastname" class="input-group-addon glyphicon glyphicon-user"></label> 
+                                </div> </div> 
+                            <div class="form-group">
+                                <div class="input-group">
+                                    <input maxlength="20" type="text" name="login" class="form-control" id="rLogin" placeholder="Login" required>
+                                    <label for="uLogin" class="input-group-addon glyphicon glyphicon-user"></label> 
+                                </div> </div> 
+                            <div class="form-group">
+                                <div class="input-group">
+
+                                    <input type="email" maxlength="32" name="email" class="form-control" id="rEmail" placeholder="Email" required>
+                                    <label for="uEmail" class="input-group-addon glyphicon glyphicon-envelope"></label> 
+                                </div> </div> 
+
+                            <div class="form-group">
+                                <div class="input-group">
+                                    <input type="password" name="pass1" maxlength="32" id="pass1" class="form-control" id="rPass1" placeholder="Password" required>
+                                    <label for="uPass1" class="input-group-addon glyphicon glyphicon glyphicon-lock"></label> 
+                                </div> </div> 
+                            <div class="form-group">
+                                <div class="input-group">
+                                    <input type="password" maxlength="32" name="pass2" id="pass2" class="form-control" id="rPass2" placeholder="Confirm Password" required>
+                                    <label for="uPass2" class="input-group-addon glyphicon glyphicon-lock"></label> 
+                                </div>
+                            </div> 
+
+                            <div class="modal-footer">
+                                <input type="submit"  class="form-control btn btn-primary btn-block" value="Register">
+
+                            </div> 
+                        </form> 
+                        </div>
+                    {% else %}
+                        
+                        
+                      
+                        
+                        
+                        
+                        {% if app.session.flashbag.has('RegSuccessFlashBag') %}
+                            {%for flashMessage in app.session.flashbag.get('RegSuccessFlashBag') %}
+                                <h5>{{flashMessage}}</h5>
+                            {% endfor %}
+                            <script>
+                                $(document).ready(function () {
+                                    document.getElementById("RegButton").click();
+                                });
+                            </script>
+                        
+                            <div class="modal-body" id="modal">
+                                <form role="form" method="POST" action="{{asset('check_reg')}}" onsubmit="return myFunction()">
+                                    {% for flashMessage in app.session.flashbag.get('RegFnameFlashBag') %}
+                                        <div class="form-group">
+                                            <div class="input-group">
+                                                <input value="{{flashMessage}}" maxlength="15" type="text" name="firstname" class="form-control" id="rFirstname" placeholder="Firstname" required>
+                                                <label for="uFirstname" class="input-group-addon glyphicon glyphicon-user"></label> 
+                                            </div> </div> 
+                                        {% endfor %}
+                                        {% for flashMessage in app.session.flashbag.get('RegLnameFlashBag') %}
+                                        <div class="form-group">
+                                            <div class="input-group">
+                                                <input value="{{flashMessage}}" maxlength="15" type="text" name="lastname" class="form-control" id="rLastname" placeholder="Lastname" required>
+                                                <label for="uLastname" class="input-group-addon glyphicon glyphicon-user"></label> 
+                                            </div> </div> 
+                                        {% endfor %}
+                                        {% for flashMessage in app.session.flashbag.get('RegLoginFlashBag') %}
+                                        <div class="form-group">
+                                            <div class="input-group">
+                                                <input value="{{flashMessage}}" maxlength="20" type="text" name="login" class="form-control" id="rLogin" placeholder="Login" required>
+                                                <label for="uLogin" class="input-group-addon glyphicon glyphicon-user"></label> 
+                                            </div> </div> 
+                                        {% endfor %}
+                                        {% for flashMessage in app.session.flashbag.get('RegEmailFlashBag') %}
+                                        <div class="form-group">
+                                            <div class="input-group">
+                                                <input value="{{flashMessage}}" type="email" maxlength="32" name="email" class="form-control" id="rEmail" placeholder="Email" required>
+                                                <label for="uEmail" class="input-group-addon glyphicon glyphicon-envelope"></label> 
+                                            </div> </div>
+                                        {% endfor %}
+
+
+
+                                    <script>
+                                        $(document).ready(function () {
+                                            document.getElementById("RegButton").click();
+
+                                        });
+                                    </script> 
+
+                                    {% if app.session.flashbag.has('RegWLoginFlashBag')  %}
+
+                                        <script>
+                                            $(document).ready(function () {
+
+                                                document.getElementById("rLogin").style.borderColor = "red";
+
+                                                var login = $("#rLogin");
+
+                                                $("#rLogin").on("click", function () {
+                                                    login.css({'border': '1px solid #B9BCBD'});
+                                                });
+                                            });
+
+                                        </script>
+
+                                    {% elseif app.session.flashbag.has('RegWEmailFlashBag')  %}
+
+                                        <script>
+                                            $(document).ready(function () {
+
+                                                document.getElementById("rEmail").style.borderColor = "red";
+
+                                                var email = $("#rEmail");
+
+                                                $("#rEmail").on("click", function () {
+                                                    email.css({'border': '1px solid #B9BCBD'});
+                                                });
+                                            });
+
+                                        </script>
+<div class="form-group">
+                                        <div class="input-group">
+                                            <input type="password" name="pass1" maxlength="32" id="pass1" class="form-control" id="rPass1" placeholder="Password" required>
+                                            <label for="uPass1" class="input-group-addon glyphicon glyphicon glyphicon-lock"></label> 
+                                        </div> </div> 
+                                    <div class="form-group">
+                                        <div class="input-group">
+                                            <input type="password" maxlength="32" name="pass2" id="pass2" class="form-control" id="rPass2" placeholder="Confirm Password" required>
+                                            <label for="uPass2" class="input-group-addon glyphicon glyphicon-lock"></label> 
+                                        </div>
+                                    </div> 
+
+                                    <div class="modal-footer">
+                                        <input type="submit"  class="form-control btn btn-primary btn-block" value="Register">
+
+                                    </div> 
+                                </form>   
+                                    {% endif %}
+                                    
+
+
+
+
+                              
+                            </div>
+
+                        {% endif %}
+
+
+
+                    </div>
+                </div>
+            </div>
+        </div>                                   
+        <script>
+            function myFunction() {
+                var pass1 = document.getElementById("rPass1").value;
+                var pass2 = document.getElementById("rPass2").value;
+                var ok = true;
+                if (pass1 != pass2) {
+                    //alert("Passwords Do not match");
+                    document.getElementById("rPass1").style.borderColor = "#E34234";
+                    document.getElementById("rPass2").style.borderColor = "#E34234";
+                    ok = false;
+                }
+
+                return ok;
+            }
+        </script>
+
+
+
+
+    {% endif %}
+
+
+
+
+
+
+
+
+
+    <hr>
+    <hr><hr>
+    <hr><hr><hr><hr><hr><hr><hr>
+    <hr>
+    <hr>
+    <hr><hr><hr><hr><hr><hr><hr><hr><hr><hr><hr><hr><hr><hr><hr><hr><hr><hr>
+
+
+
+
+
+
+
+
+
+
+
+</body>

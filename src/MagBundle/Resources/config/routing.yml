@@ -1,0 +1,29 @@
+mag_homepage:
+    path:     /
+    defaults: { _controller: MagBundle:Default:index }
+
+login:
+    path:     /login
+    defaults: { _controller: MagBundle:User:login }
+
+registration:
+    path:     /registration
+    defaults: { _controller: MagBundle:User:registration }
+check_reg:
+    path: /check_reg
+    defaults: { _controller: MagBundle:User:check_reg }
+check_login:
+    path: /check_login
+    defaults: { _controller: MagBundle:User:check_login }
+exit:
+    path: /exit
+    defaults: { _controller: MagBundle:User:exit }
+test:
+    path: /test
+    defaults: { _controller: MagBundle:User:test }
+article:
+    path: /articles
+    defaults: { _controller: MagBundle:Article:article }
+book:
+    path: /book/{id}
+    defaults: { _controller: MagBundle:Article:item }

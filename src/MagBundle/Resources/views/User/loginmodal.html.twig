@@ -1,0 +1,88 @@
+
+<head>
+ <link href="{{ asset('css/bootstrap.css')}}" rel="stylesheet"/>
+    <link href="{{ asset('css/style.css')}}" rel="stylesheet"/>
+    <link href="//netdna.bootstrapcdn.com/bootstrap/3.1.0/css/bootstrap.min.css" rel="stylesheet">
+
+</head>
+
+{% block login %}
+
+    
+        {% if (app.request.cookies.has('id') or app.request.session.has('id') ) %}exit
+        {%else%}
+
+
+            <button class="btn btn-default navbar-btn" data-toggle="modal" data-target="#myModal" id="osx">
+                Log in
+            </button>
+
+            <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+
+                        <div class="modal-header">
+                            <button type="button" id="close" class="close" data-dismiss="modal" aria-hidden="true">x</button>
+                            <h4 class="modal-title" id="myModalLabel">Log in</h4>
+                        </div> 
+
+                        <div class="modal-body" id="modal">
+                            <form role="form" method="POST" action="{{asset('check_login')}}">
+                                <div class="form-group">
+                                    <div class="input-group">
+                                        {% if  app.session.flashbag.has('notice') ==null %}
+
+                                            <input name="login" type="text" class="form-control" id="uLogin" placeholder="Login" required>
+                                        {%else%}
+                                            {% for flashMessage in app.session.flashbag.get('notice') %}
+                                                <input value="{{flashMessage}}" name="login" type="text" class="form-control" id="uLogin" placeholder="Login" required>
+                                            {%endfor%}
+                                            <script>
+                                                $(document).ready(function () {
+                                                    document.getElementById("osx").click();
+                                                });
+                                            </script>
+
+
+                                        {%endif%}
+
+
+                                        <label for="uLogin" class="input-group-addon glyphicon glyphicon-user"></label>  
+
+                                    </div>
+                                </div> 
+
+                                <div class="form-group">
+                                    <div class="input-group">
+                                        <input name="pass" type="password" class="form-control" id="uPassword" placeholder="Password" required>
+                                        <label for="uPassword" class="input-group-addon glyphicon glyphicon-lock"></label>
+                                    </div> 
+                                </div> 
+
+                                <div class="checkbox">
+                                    <label>
+
+                                        <input type="checkbox" name="remember" > Remember me
+                                    </label>
+                                </div> 
+                                <div class="modal-footer">
+                                    <input type="submit"  class="form-control btn btn-primary btn-block" value="Log In">
+
+                                </div> 
+                            </form>            
+                        </div>
+                    </div>
+                </div>
+            </div>                                      
+            <script src="{{asset('js/javascript.js')}}"></script>
+            <script src="{{asset('js/form.js')}}"></script>
+            <script type="text/javascript" src="//code.jquery.com/jquery-1.10.2.min.js"></script>
+            <script type="text/javascript" src="//netdna.bootstrapcdn.com/bootstrap/3.1.0/js/bootstrap.min.js"></script>
+            <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.2/jquery.min.js"></script>
+
+        {% endif %}
+
+   
+
+
+{% endblock %}   

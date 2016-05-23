@@ -1,0 +1,21 @@
+{% include 'MagBundle:Default:head.html.twig'%}
+<h1>Articles</h1>
+
+<body>
+    
+    
+    <!--- qqqq---->
+   
+ 
+         {% for bk in data.book %}
+         <a href="{{url('book', {'id': bk.id})}}"><div class="col-md-3" style="border: 2px solid red;">
+             
+             <img src="{{asset(bk.wallper)}}">
+             <p style="margin:0 auto;">{{bk.book}}</p>
+      
+     </div></a>
+         {%endfor%}
+           
+        
+         
+  </body>
