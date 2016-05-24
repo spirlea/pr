@@ -7,17 +7,30 @@ MagBundle\Entity\books:
             type: integer
             generator: { strategy: AUTO }
     fields:
-        book:
+        name:
             type: string
             length: 32
         author:
             type: string
             lenght: 32
+            nullable: TRUE
         description:
             type: text
+            nullable: TRUE
         year:
             type: string
             lenght: 10
+            nullable: TRUE
         wallper:
             type: text
-        
+            nullable: TRUE
+        article_type:
+            type: string
+            length: 15
+            nullable: TRUE
+        price:
+             type: integer
+        stock:
+            type: integer
+        views:
+            type: integer

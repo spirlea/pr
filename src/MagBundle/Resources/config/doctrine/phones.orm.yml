@@ -1,0 +1,92 @@
+# src/MagBundle/Resources/config/doctrine/phones.orm.yml
+MagBundle\Entity\phones:
+    type: entity
+    table: phones
+    id:
+        id:
+            type: integer
+            generator: { strategy: AUTO }
+    fields:
+        name:
+            type: string
+            length: 32 
+        article_type:
+            type: string
+            length: 15
+        image1: 
+            type: text
+            nullable: TRUE
+        image2: 
+            type: text
+            nullable: TRUE
+        image3: 
+            type: text
+            nullable: TRUE
+        image4: 
+            type: text
+            nullable: TRUE
+        image5: 
+            type: text
+            nullable: TRUE
+        Technology:
+            type: string
+            length: 20
+            nullable: TRUE
+        Dimensions:
+             type: text
+             nullable: TRUE
+        Weight:
+            type: string
+            length: 10
+            nullable: TRUE
+        Keyboard:
+            type: text
+            nullable: TRUE
+        SIM:
+            type: text
+            nullable: TRUE
+        GPS:
+            type: string
+            length: 20
+            nullable: TRUE
+        USB:
+            type: string
+            length: 20
+            nullable: TRUE
+        Camera_Primary:
+            type: string
+            length: 10
+            nullable: TRUE
+        Camera_Secondary:
+            type: string
+            length: 10 
+            nullable: TRUE
+        Browser:
+            type: text
+            nullable: TRUE
+        Battery:
+            type: text
+            nullable: TRUE
+        Battery_StandBy:
+            type: string
+            length: 20 
+            nullable: TRUE
+        Battery_TalkTime:
+            type: string
+            length: 20
+            nullable: TRUE
+        Audio_Quality:
+            type: text
+            nullable: TRUE
+        Loudspeaker:
+            type: text
+            nullable: TRUE
+        description:
+            type: text
+            nullable: TRUE
+        price:
+             type: integer
+        stock:
+            type: integer
+        views:
+            type: integer

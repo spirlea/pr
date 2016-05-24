@@ -164,4 +164,144 @@ class books
     {
         return $this->wallper;
     }
+    /**
+     * @var string
+     */
+    private $article_type;
+
+
+    /**
+     * Set article_type
+     *
+     * @param string $articleType
+     * @return books
+     */
+    public function setArticleType($articleType)
+    {
+        $this->article_type = $articleType;
+
+        return $this;
+    }
+
+    /**
+     * Get article_type
+     *
+     * @return string 
+     */
+    public function getArticleType()
+    {
+        return $this->article_type;
+    }
+    /**
+     * @var string
+     */
+    private $name;
+
+
+    /**
+     * Set name
+     *
+     * @param string $name
+     * @return books
+     */
+    public function setName($name)
+    {
+        $this->name = $name;
+
+        return $this;
+    }
+
+    /**
+     * Get name
+     *
+     * @return string 
+     */
+    public function getName()
+    {
+        return $this->name;
+    }
+    /**
+     * @var integer
+     */
+    private $price;
+
+    /**
+     * @var integer
+     */
+    private $stock;
+
+    /**
+     * @var integer
+     */
+    private $views;
+
+
+    /**
+     * Set price
+     *
+     * @param integer $price
+     * @return books
+     */
+    public function setPrice($price)
+    {
+        $this->price = $price;
+
+        return $this;
+    }
+
+    /**
+     * Get price
+     *
+     * @return integer 
+     */
+    public function getPrice()
+    {
+        return $this->price;
+    }
+
+    /**
+     * Set stock
+     *
+     * @param integer $stock
+     * @return books
+     */
+    public function setStock($stock)
+    {
+        $this->stock = $stock;
+
+        return $this;
+    }
+
+    /**
+     * Get stock
+     *
+     * @return integer 
+     */
+    public function getStock()
+    {
+        return $this->stock;
+    }
+
+    /**
+     * Set views
+     *
+     * @param integer $views
+     * @return books
+     */
+    public function setViews($views)
+    {
+        $this->views = $views;
+
+        return $this;
+    }
+
+    /**
+     * Get views
+     *
+     * @return integer 
+     */
+    public function getViews()
+    {
+        return $this->views;
+    }
 }

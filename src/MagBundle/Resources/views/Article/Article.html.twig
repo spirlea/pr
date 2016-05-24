@@ -7,11 +7,11 @@
     <!--- qqqq---->
    
  
-         {% for bk in data.book %}
-         <a href="{{url('book', {'id': bk.id})}}"><div class="col-md-3" style="border: 2px solid red;">
+         {% for bk in data.name %}
+         <a href="{{url( bk.articleType, {'id': bk.articleId})}}"><div class="col-md-3" style="border: 2px solid red;">
              
              <img src="{{asset(bk.wallper)}}">
-             <p style="margin:0 auto;">{{bk.book}}</p>
+             <p style="margin:0 auto;">{{bk.name}}</p>
       
      </div></a>
          {%endfor%}

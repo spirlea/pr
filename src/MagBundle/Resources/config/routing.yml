@@ -26,4 +26,7 @@ article:
     defaults: { _controller: MagBundle:Article:article }
 book:
     path: /book/{id}
-    defaults: { _controller: MagBundle:Article:item }
+    defaults: { _controller: MagBundle:Article:book }
+phone:
+    path: /phone/{id}
+    defaults: { _controller: MagBundle:Article:phone }

@@ -1,0 +1,43 @@
+
+{% if data.name is defined %}
+ 
+{% for bk in data.name %}
+         <div class="col-md-3" style="border: 2px solid red;">
+             <p style="color:Blue; height: 36px;"><strong>Model:</strong><span>{{bk.name}}</span></p>
+           {% if bk.image1 != null%}<img src="{{asset(bk.image1)}}">{% endif %}
+           {% if bk.image2 != null%}<img src="{{asset(bk.image2)}}">{% endif %}
+           {% if bk.image3 != null%}<img src="{{asset(bk.image3)}}">{% endif %}
+           {% if bk.image4 != null%}<img src="{{asset(bk.image4)}}">{% endif %}
+           {% if bk.image5 != null%}<img src="{{asset(bk.image5)}}">{% endif %}
+           
+           {% if bk.Technology != null%}<p ><strong>Tehnology:</strong> {{bk.Technology}} </p>{% endif %}
+           {% if bk.dimensions != null%}<p ><strong>Dimensions:</strong> {{bk.dimensions}} </p>{% endif %}
+           {% if bk.weight != null%}<p ><strong>Weight:</strong> {{bk.weight}} </p>{% endif %}
+           {% if bk.keyboard != null%}<p ><strong>Keyboard:</strong>{{bk.keyboard}} </p>{% endif %}
+           {% if bk.sim != null%}<p ><strong>sim:</strong> {{bk.sim}} </p>{% endif %}
+           {% if bk.gps != null%}<p ><strong>gps:</strong> {{bk.gps}} </p>{% endif %}
+           {% if bk.usb != null%}<p ><strong>usb:</strong> {{bk.usb}} </p>{% endif %}
+           {% if bk.browser != null%}<p ><strong>Browser:</strong> {{bk.browser}} </p>{% endif %}
+           {% if bk.cameraPrimary != null%}<p><strong>Camera Primary:</strong> {{bk.cameraPrimary}} </p>{% endif %}
+           {% if bk.cameraSecondary != null%}<p><strong>Camera Secondary:</strong> {{bk.cameraSecondary }}</p>{% endif %}
+           {% if bk.battery != null%}<p ><strong>Battery:</strong> {{bk.battery}} </p>{% endif %}   
+           {% if bk.batteryStandBy != null%}<p ><strong>Battery Stand By:</strong> {{bk.batteryStandBy}}</p>{% endif %}
+           {% if bk.batteryTalkTime != null%}<p ><strong>Battery Talk Time:</strong> {{bk.batteryTalkTime}} </p>{% endif %}
+           {% if bk.AudioQuality != null%}<p ><strong>Audio Qualty:</strong> {{bk.AudioQuality}}</p>{% endif %}
+           {% if bk.loudspeaker != null%}<p ><strong>Louspeaker:</strong> {{bk.loudspeaker}} </p>{% endif %}
+           {% if bk.description != null%}<p ><strong>Description:</strong> {{bk.description}} </p>{% endif %}
+           <p style="color:red;"><strong>Price:</strong> {{bk.price}} lei</p>
+           <p style="color:green;"><strong> In Stock:</strong> {{bk.stock}}</p>
+           
+           
+           
+           
+           
+             
+            
+      
+     </div>
+         {%endfor%}
+       {% else %}
+           item does not exist
+{% endif %}
