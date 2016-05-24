@@ -1,0 +1,41 @@
+<h1>computer</h1>
+
+{% if data.name is defined %}
+ 
+{% for bk in data.name %}
+         <div class="col-md-3" style="border: 2px solid red;">
+             <p style="color:Blue; height: 36px;"><strong>Model:</strong><span>{{bk.name}}</span></p>
+           {% if bk.image1 != null%}<img src="{{asset(bk.image1)}}">{% endif %}
+           {% if bk.image2 != null%}<img src="{{asset(bk.image2)}}">{% endif %}
+           {% if bk.image3 != null%}<img src="{{asset(bk.image3)}}">{% endif %}
+           {% if bk.image4 != null%}<img src="{{asset(bk.image4)}}">{% endif %}
+           {% if bk.image5 != null%}<img src="{{asset(bk.image5)}}">{% endif %}
+           
+           {% if bk.OS != null%}<p ><strong>OS:</strong> {{bk.OS}} </p>{% endif %}
+           {% if bk.carcase != null%}<p ><strong>Carcase:</strong> {{bk.carcase}} </p>{% endif %}
+           {% if bk.weight != null%}<p ><strong>Weight:</strong> {{bk.weight}} </p>{% endif %}
+           {% if bk.ports != null%}<p ><strong>ports:</strong> {{bk.ports}} </p>{% endif %}
+           {% if bk.procesor != null%}<p ><strong>Procesor:</strong> {{bk.procesor}} </p>{% endif %}
+           {% if bk.RAM != null%}<p><strong>RAM:</strong> {{bk.RAM}} </p>{% endif %}
+           {% if bk.memorySSD != null%}<p><strong>SSD:</strong> {{bk.memorySSD }}</p>{% endif %}
+           {% if bk.memoryHDD != null%}<p ><strong>HDD:</strong> {{bk.memoryHDD}} </p>{% endif %}   
+          
+           {% if bk.video != null%}<p ><strong>Video:</strong> {{bk.video}} </p>{% endif %}
+           {% if bk.game != null%}<p ><strong>Game:</strong> {{bk.game}}</p>{% endif %}
+           {% if bk.PowerSupply != null%}<p ><strong>PowerSupply:</strong> {{bk.PowerSupply}} </p>{% endif %}
+           {% if bk.description != null%}<p ><strong>Description:</strong> {{bk.description}} </p>{% endif %}
+           <p style="color:red;"><strong>Price:</strong> {{bk.price}} lei</p>
+           <p style="color:green;"><strong> In Stock:</strong> {{bk.stock}}</p>
+           
+           
+           
+           
+           
+             
+            
+      
+     </div>
+         {%endfor%}
+       {% else %}
+           item does not exist
+{% endif %}

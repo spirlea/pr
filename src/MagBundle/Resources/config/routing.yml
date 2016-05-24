@@ -30,3 +30,6 @@ book:
 phone:
     path: /phone/{id}
     defaults: { _controller: MagBundle:Article:phone }
+computer:
+    path: /computer/{id}
+    defaults: { _controller: MagBundle:Article:computer }

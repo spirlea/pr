@@ -66,5 +66,25 @@ class ArticleController extends Controller {
             return $this->render('MagBundle:Article:phone.html.twig', compact('data'));
         }
     }
+    
+     public function computerAction($id) {
+
+        $em = $this->getDoctrine()->getManager();
+        $query = $em->createQuery(
+                        'SELECT computers FROM MagBundle:computers computers WHERE computers.id= :id'
+                )->setParameter('id', $id);
+        try {
+            $result = $query->getResult();
+        } catch (\Doctrine\Orm\NoResultException $e) {
+            $result = null;
+        }
+        if ($result == null) {
+          
+            return $this->render('MagBundle:Article:computer.html.twig');
+        } else {
+            $data = ['name' => $query->getResult(),];
+            return $this->render('MagBundle:Article:computer.html.twig', compact('data'));
+        }
+    }
 
 }

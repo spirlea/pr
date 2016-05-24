@@ -1,0 +1,73 @@
+# src/MagBundle/Resources/config/doctrine/computers.orm.yml
+MagBundle\Entity\computers:
+    type: entity
+    table: computers
+    id:
+        id:
+            type: integer
+            generator: { strategy: AUTO }
+    fields:
+        name:
+            type: string
+            length: 32 
+        article_type:
+            type: string
+            length: 15
+        image1: 
+            type: text
+            nullable: TRUE
+        image2: 
+            type: text
+            nullable: TRUE
+        image3: 
+            type: text
+            nullable: TRUE
+        image4: 
+            type: text
+            nullable: TRUE
+        image5: 
+            type: text
+            nullable: TRUE
+        OS:
+            type: string
+            length: 20
+            nullable: TRUE
+        Carcase:
+             type: text
+             nullable: TRUE
+        Weight:
+            type: string
+            length: 10
+            nullable: TRUE     
+        Ports:
+            type: string
+            length: 20
+            nullable: TRUE
+        Procesor:
+            type: text
+        RAM:
+            type: text
+        Memory_SSD:
+            type: text
+            nullable: TRUE
+        Memory_HDD:
+            type: text
+            nullable: TRUE
+        Video:
+            type: text
+        Game:
+            type: string
+            lenght: 5
+            nullable: TRUE
+        Power_Supply:
+            type: string
+            lenght: 10
+        description:
+            type: text
+            nullable: TRUE
+        price:
+             type: integer
+        stock:
+            type: integer
+        views:
+            type: integer
