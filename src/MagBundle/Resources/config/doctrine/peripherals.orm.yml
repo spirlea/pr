@@ -1,0 +1,109 @@
+# src/MagBundle/Resources/config/doctrine/peripherals.orm.yml
+MagBundle\Entity\peripherals:
+    type: entity
+    table: peripherals
+    id:
+        id:
+            type: integer
+            generator: { strategy: AUTO }
+    fields:
+        name:
+            type: string
+            length: 32 
+        article_type:
+            type: string
+            length: 15
+        wallper:
+            type: text
+            nullable: TRUE
+        image1: 
+            type: text
+            nullable: TRUE
+        image2: 
+            type: text
+            nullable: TRUE
+        image3: 
+            type: text
+            nullable: TRUE
+        image4: 
+            type: text
+            nullable: TRUE
+        image5: 
+            type: text
+            nullable: TRUE
+        component_type:
+            type: text
+            nullable: true
+        mouse_type:
+            type: string
+            lenght: 20
+            nullable: true
+        btn_number:
+            type: integer
+            nullable: true
+        btn_type: 
+            type: text
+            nullbale: true
+        color:
+            type: text
+            nullbale: true
+        weigth:
+            type: text
+            nullable: true
+        resolution:
+            type: text
+            nullable: true
+        keyboard:
+            type: text
+            nullable: true
+        keyboard_type:
+            type: text
+            nullable: true
+        interface: 
+            type: text
+            nullable: true
+        connector:
+            type: text
+            nullable: true
+        carcase: 
+            type: text
+            nullable: true
+        frecvence_band:
+            type: text
+            nullable: true
+        noise:
+            type: text
+            nullable: true
+        rms_power:
+            type: text
+            nullable: true
+        dimensions:
+            type: text
+            nullable: true
+        producer:
+            type: text
+            nullabel: true
+        volum_control:
+            type: text
+            nullable: true
+        cable_length:
+            type: text
+            nullable: true
+        mem_capacity:
+            type: text
+            nullable: true
+        r_speed:
+            type: text
+            nullable: true
+        w_speed:
+            type: text
+            nullable: true
+        description:
+            type: text
+            nullable: TRUE
+        price:
+             type: integer
+        stock:
+            type: integer
+        views:
+            type: integer

@@ -752,4 +752,60 @@ class phones
     {
         return $this->views;
     }
+    /**
+     * @var string
+     */
+    private $wallper;
+
+
+    /**
+     * Set wallper
+     *
+     * @param string $wallper
+     * @return phones
+     */
+    public function setWallper($wallper)
+    {
+        $this->wallper = $wallper;
+
+        return $this;
+    }
+
+    /**
+     * Get wallper
+     *
+     * @return string 
+     */
+    public function getWallper()
+    {
+        return $this->wallper;
+    }
+    /**
+     * @var string
+     */
+    private $Weigth;
+
+
+    /**
+     * Set Weigth
+     *
+     * @param string $weigth
+     * @return phones
+     */
+    public function setWeigth($weigth)
+    {
+        $this->Weigth = $weigth;
+
+        return $this;
+    }
+
+    /**
+     * Get Weigth
+     *
+     * @return string 
+     */
+    public function getWeigth()
+    {
+        return $this->Weigth;
+    }
 }

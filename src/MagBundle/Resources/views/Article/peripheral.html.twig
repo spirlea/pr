@@ -1,0 +1,45 @@
+{% if data.name is defined %}
+ 
+{% for bk in data.name %}
+         <div class="col-md-3" style="border: 2px solid red;">
+             <p style="color:Blue; height: 36px;"><strong>Model:</strong><span>{{bk.name}}</span></p>
+           {% if bk.image1 != null%}<img src="{{asset(bk.image1)}}">{% endif %}
+           {% if bk.image2 != null%}<img src="{{asset(bk.image2)}}">{% endif %}
+           {% if bk.image3 != null%}<img src="{{asset(bk.image3)}}">{% endif %}
+           {% if bk.image4 != null%}<img src="{{asset(bk.image4)}}">{% endif %}
+           {% if bk.image5 != null%}<img src="{{asset(bk.image5)}}">{% endif %}
+           
+           {% if bk.memCapacity != null%}<p><strong>Memory Capacity: </strong>{{bk.memCapacity}}</p>{% endif %}
+           {% if bk.mouseType != null%}<p><strong>Mouse Type: </strong>{{bk.mouseType}}</p>{% endif %}
+           {% if bk.btnNumber != null%}<p><strong>Button Numbers: </strong>{{bk.btnNumber}}</p>{% endif %}
+           {% if bk.btnType != null%}<p><strong>Button Type: </strong>{{bk.btnType}}</p>{% endif %}
+           {% if bk.color != null%}<p><strong>Color: </strong>{{bk.color}}</p>{% endif %}
+           {% if bk.resolution != null%}<p><strong>Resolution: </strong>{{bk.resolution}}</p>{% endif %}
+           {% if bk.dimensions != null%}<p><strong>Dimensions: </strong>{{bk.dimensions}}</p>{% endif %}
+           {% if bk.weigth != null%}<p><strong>Weigth: </strong>{{bk.weigth}}</p>{% endif %}
+           {% if bk.keyboard != null%}<p><strong>Keyboard: </strong>{{bk.keyboard}}</p>{% endif %}
+           {% if bk.noise != null%}<p><strong>Noise: </strong>{{bk.noise}}</p>{% endif %}
+           {% if bk.keyboardType != null%}<p><strong>Keyboard type: </strong>{{bk.keyboardType}}</p>{% endif %}
+           {% if bk.carcase != null%}<p><strong>Carcase: </strong>{{bk.carcase}}</p>{% endif %}
+           {% if bk.frecvenceBand != null%}<p><strong>Frecvence Band: </strong>{{bk.frecvenceBand}}</p>{% endif %}
+           {% if bk.rmsPower != null%}<p><strong>RMS-Power: </strong>{{bk.rmsPower}}</p>{% endif %}
+           {% if bk.volumControl != null%}<p><strong>Volume Controll: </strong>{{bk.volumControl}}</p>{% endif %}
+           {% if bk.cableLength != null%}<p><strong>Cable Length: </strong>{{bk.CableLength}}</p>{% endif %}
+           {% if bk.rSpeed != null%}<p><strong>Read Speed: </strong>{{bk.rSpeed}}</p>{% endif %}
+           {% if bk.wSpeed != null%}<p><strong>Write Speed: </strong>{{bk.wSpeed}}</p>{% endif %}
+           
+           {% if bk.interface != null%}<p><strong>Interface: </strong>{{bk.inteface}}</p>{% endif %}
+           {% if bk.connector != null%}<p><strong>Connector: </strong>{{bk.connector}}</p>{% endif %}
+           {% if bk.description != null%}<p><strong>Description: </strong>{{bk.description}}</p>{% endif %}
+           
+           <p style="color:red;"><strong>Price:</strong> {{bk.price}} lei</p>
+         <p style="color:green;"><strong> In Stock:</strong> {{bk.stock}}</p>
+       
+
+
+
+
+           
+           
+{% endfor %}
+{% endif %}

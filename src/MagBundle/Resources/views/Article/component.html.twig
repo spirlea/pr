@@ -1,0 +1,47 @@
+{% if data.name is defined %}
+ 
+{% for bk in data.name %}
+         <div class="col-md-3" style="border: 2px solid red;">
+             <p style="color:Blue; height: 36px;"><strong>Model:</strong><span>{{bk.name}}</span></p>
+           {% if bk.image1 != null%}<img src="{{asset(bk.image1)}}">{% endif %}
+           {% if bk.image2 != null%}<img src="{{asset(bk.image2)}}">{% endif %}
+           {% if bk.image3 != null%}<img src="{{asset(bk.image3)}}">{% endif %}
+           {% if bk.image4 != null%}<img src="{{asset(bk.image4)}}">{% endif %}
+           {% if bk.image5 != null%}<img src="{{asset(bk.image5)}}">{% endif %}
+           
+           {% if bk.memCapacity != null%}<p><strong>Memory Capacity: </strong>{{bk.memCapacity}}</p>{% endif %}
+           {% if bk.memType != null%}<p><strong>Memory Type: </strong>{{bk.memType}}</p>{% endif %}
+           {% if bk.memStandart != null%}<p><strong>Memory Standart: </strong>{{bk.memStandart}}</p>{% endif %}
+           {% if bk.voltage != null%}<p><strong>Voltage: </strong>{{bk.voltage}}</p>{% endif %}
+           {% if bk.producer != null%}<p><strong>Producer: </strong>{{bk.producer}}</p>{% endif %}
+           {% if bk.power != null%}<p><strong>Power: </strong>{{bk.power}}</p>{% endif %}
+           {% if bk.dimensions != null%}<p><strong>Dimensions: </strong>{{bk.dimensions}}</p>{% endif %}
+           {% if bk.weigth != null%}<p><strong>Weigth: </strong>{{bk.weigth}}</p>{% endif %}
+           {% if bk.rpm != null%}<p><strong>RPM: </strong>{{bk.rpm}}</p>{% endif %}
+           {% if bk.noise != null%}<p><strong>Noise: </strong>{{bk.noise}}</p>{% endif %}
+           {% if bk.dataTransfer != null%}<p><strong>Data Transfer: </strong>{{bk.dataTransfer}}</p>{% endif %}
+           {% if bk.timingCas != null%}<p><strong>Timing CAS: </strong>{{bk.timingCas}}</p>{% endif %}
+           {% if bk.formFactor != null%}<p><strong>Form Factor: </strong>{{bk.formFactor}}</p>{% endif %}
+           {% if bk.cpu != null%}<p><strong>CPU: </strong>{{bk.cpu}}</p>{% endif %}
+           {% if bk.gpu != null%}<p><strong>CPU: </strong>{{bk.gpu}}</p>{% endif %}
+           {% if bk.magFrecvence != null%}<p><strong>Magestral Frecvence: </strong>{{bk.magFrecvence}}</p>{% endif %}
+           {% if bk.cacheL1 != null%}<p><strong>Cache L1: </strong>{{bk.cacheL1}}</p>{% endif %}
+           {% if bk.cacheL2 != null%}<p><strong>Cache L2: </strong>{{bk.cacheL2}}</p>{% endif %}
+           {% if bk.cacheL3 != null%}<p><strong>Cache L3: </strong>{{bk.cacheL3}}</p>{% endif %}
+           {% if bk.gProcessor != null%}<p><strong>Graphic Processor: </strong>{{bk.gProcessor}}</p>{% endif %}
+           {% if bk.PFC != null%}<p><strong>PFC: </strong>{{bk.PFC}}</p>{% endif %}
+           {% if bk.interface != null%}<p><strong>Interface: </strong>{{bk.inteface}}</p>{% endif %}
+           {% if bk.connections != null%}<p><strong>Connections: </strong>{{bk.connections}}</p>{% endif %}
+           {% if bk.description != null%}<p><strong>Description: </strong>{{bk.description}}</p>{% endif %}
+           
+           <p style="color:red;"><strong>Price:</strong> {{bk.price}} lei</p>
+           <p style="color:green;"><strong> In Stock:</strong> {{bk.stock}}</p>
+       
+
+
+
+
+           
+           
+{% endfor %}
+{% endif %}

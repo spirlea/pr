@@ -13,6 +13,9 @@ MagBundle\Entity\phones:
         article_type:
             type: string
             length: 15
+        wallper:
+            type: text
+            nullable: TRUE
         image1: 
             type: text
             nullable: TRUE
@@ -35,7 +38,7 @@ MagBundle\Entity\phones:
         Dimensions:
              type: text
              nullable: TRUE
-        Weight:
+        Weigth:
             type: string
             length: 10
             nullable: TRUE

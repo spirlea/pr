@@ -1,0 +1,114 @@
+# src/MagBundle/Resources/config/doctrine/components.orm.yml
+MagBundle\Entity\components:
+    type: entity
+    table: components
+    id:
+        id:
+            type: integer
+            generator: { strategy: AUTO }
+    fields:
+        name:
+            type: string
+            length: 32 
+        article_type:
+            type: string
+            length: 15
+        component_type:
+            type: text
+        wallper:
+            type: text
+            nullable: TRUE
+        image1: 
+            type: text
+            nullable: TRUE
+        image2: 
+            type: text
+            nullable: TRUE
+        image3: 
+            type: text
+            nullable: TRUE
+        image4: 
+            type: text
+            nullable: TRUE
+        image5: 
+            type: text
+            nullable: TRUE
+        mem_capacity:
+            type: text
+            nullable: TRUE
+        mem_type:
+               type: text
+               nullable: true
+        mem_standart: 
+            type: text
+            nullable: true
+        voltage:
+            type: text
+            nullable: true
+        producer:
+            type: text
+            nullable: true
+        power:
+            type: text
+            nullable: TRUE
+        dimensions:
+            type: text
+            nullable: true
+        weigth: 
+            type: text
+            nullable: true
+        rpm:
+            type: text
+            nullable: true
+        noise:
+            type: text
+            nullable: true
+        data_transfer:
+            type: text
+            nullbale: true
+        timing_cas:
+            type: text
+            nullable: true
+        form_factor:
+            type: text
+            nullable: true
+        
+        cpu:
+            type: text
+            nullable: TRUE  
+        gpu:
+            type: text
+            nullable: TRUE
+        mag_Frecvence:
+            type: text
+            nullable: TRUE
+        cache_l1:
+            type: text
+            nullable: true
+        cache_l2:
+               type: text
+               nullable: true
+        cache_l3:
+               type: text
+               nullable: true
+        g_processor:
+               type: text
+               nullable: true
+        PFC: 
+             type: text
+             nullable: true
+        interface:
+            type: text
+            nullable: true
+        connections:
+            type: text
+            nullable: true
+        description:
+            type: text
+            nullable: TRUE
+        price:
+             type: integer
+        stock:
+            type: integer
+        views:
+            type: integer

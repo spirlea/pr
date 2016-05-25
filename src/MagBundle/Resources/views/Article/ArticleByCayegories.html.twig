@@ -1,0 +1,21 @@
+{% include 'MagBundle:Default:head.html.twig'%}
+<h1>Articles</h1>
+
+<body>
+    
+    
+    <!--- qqqq---->
+{% if data.name is defined %}
+ 
+         {% for bk in data.name %}
+         <a href="{{url( bk.articleType, {'id': bk.Id})}}"><div class="col-md-3" style="border: 2px solid red;">
+             
+              {%if bk.wallper != null%}<img src="{{asset(bk.wallper)}}"> {%else%}<img src="{{asset('img/article-default.png')}}">{%endif%}
+             <p style="margin:0 auto;">{{bk.name}}</p>
+      
+     </div></a>
+         {%endfor%}
+{% endif %}
+        
+         
+  </body>

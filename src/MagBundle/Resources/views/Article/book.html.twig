@@ -1,16 +1,18 @@
  
 <body>
 <div>
+    {% if data.name is defined %}
 {% for bk in data.name %}
          <div class="col-md-3" style="border: 2px solid red;">
              
-             <img src="{{asset(bk.wallper)}}">
+             {%if bk.wallper != null%}<img src="{{asset(bk.wallper)}}"> {%else%}<img src="{{asset('img/article-default.png')}}">  {%endif%}
              <p ><strong>Book:</strong><span>{{bk.name}}</span></p>
-             <p ><strong>Author:</strong><span>{{bk.author}}</span></p>
-             <p ><strong>Description:</strong><span>{{bk.description}}</span></p>
-             <p ><strong>Relase Date:</strong><span>{{bk.year}}</span></p>
+            {%if bk.author != null %} <p ><strong>Author:</strong><span>{{bk.author}}</span></p> {%endif%}
+             {%if bk.author != null %}<p ><strong>Description:</strong><span>{{bk.description}}</span></p>{%endif%}
+            {%if bk.author != null %} <p ><strong>Relase Date:</strong><span>{{bk.year}}</span></p>{%endif%}
       
      </div>
          {%endfor%}
+         {%endif%}
 </div>
  </body>        

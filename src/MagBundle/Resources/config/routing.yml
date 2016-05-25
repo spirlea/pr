@@ -21,7 +21,7 @@ exit:
 test:
     path: /test
     defaults: { _controller: MagBundle:User:test }
-article:
+articles:
     path: /articles
     defaults: { _controller: MagBundle:Article:article }
 book:
@@ -33,3 +33,24 @@ phone:
 computer:
     path: /computer/{id}
     defaults: { _controller: MagBundle:Article:computer }
+component:
+    path: /component/{id}
+    defaults: { _controller: MagBundle:Article:component }
+peripheral:
+    path: /peripheral/{id}
+    defaults: { _controller: MagBundle:Article:peripheral }
+books:
+    path: /books
+    defaults: { _controller: MagBundle:Article:books }   
+phones:
+    path: /phones
+    defaults: { _controller: MagBundle:Article:phones }
+computers:
+    path: /computers
+    defaults: { _controller: MagBundle:Article:computers }
+components:
+    path: /components
+    defaults: { _controller: MagBundle:Article:components }
+peripherals:
+    path: /peripherals
+    defaults: { _controller: MagBundle:Article:peripherals }
