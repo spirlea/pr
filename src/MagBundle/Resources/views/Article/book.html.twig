@@ -1,18 +1,26 @@
  
+ <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
+    <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+
+    <link href="{{ asset('css/style.css')}}" rel="stylesheet"/>
+
 <body>
 <div>
-    {% if data.name is defined %}
 {% for bk in data.name %}
-         <div class="col-md-3" style="border: 2px solid red;">
+         <div class="bkinf" >
              
-             {%if bk.wallper != null%}<img src="{{asset(bk.wallper)}}"> {%else%}<img src="{{asset('img/article-default.png')}}">  {%endif%}
-             <p ><strong>Book:</strong><span>{{bk.name}}</span></p>
-            {%if bk.author != null %} <p ><strong>Author:</strong><span>{{bk.author}}</span></p> {%endif%}
-             {%if bk.author != null %}<p ><strong>Description:</strong><span>{{bk.description}}</span></p>{%endif%}
-            {%if bk.author != null %} <p ><strong>Relase Date:</strong><span>{{bk.year}}</span></p>{%endif%}
-      
-     </div>
+             <img style="margin-left: 40px;margin-top: 20px;" src="{{asset(bk.wallper)}}">  
+             
+         </div>
+             <br>
+             <div class="bktext" >
+                 <p ><strong>Book:</strong><span>{{bk.name}}</span></p>
+             <p ><strong>Author:</strong><span>{{bk.author}}</span></p>
+             <p ><strong>Description:</strong><span>{{bk.description}}</span></p>
+             <p ><strong>Relase Date:</strong><span>{{bk.year}}</span></p> 
+             </div>
          {%endfor%}
-         {%endif%}
+           </div >
 </div>
  </body>        

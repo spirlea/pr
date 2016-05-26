@@ -31,9 +31,49 @@
 
 
 
-
 .h{ margin:auto;
     margin-bottom: 20px;}
+
+
+.artimg{width:150px; 
+     height: 150px;}
+
+@media screen and (min-width: 974px) and (max-width: 1300px){
+    .col-md-3{
+       width: 25%;
+        float:left;
+    }
+}
+@media screen and (max-width:973px){
+    .col-md-3{
+        width: 33.33333337%;
+        float:left;
+    }
+}
+
+@media screen and (max-width:810px){
+    .col-md-3{
+        width: 50%;
+        float:left;
+    }
+}
+.col-md-3{
+    
+    margin-bottom: 1px;
+}
+
+.bkinf{
+    border:1px solid #ebebeb;
+    height:350;
+    width:300px;
+    float:left;
+    margin-left:20px;
+    margin-top:20px;
+}
+.bktext{
+    margin-top:20px;
+    margin-left:400px;
+}
 
 
 
