@@ -13,10 +13,20 @@ MagBundle\Entity\articles:
         article_type: 
              type: string
              length: 20
+        producer:     
+            type: text
+            nullable: true
         wallper:
              type: text
              nullable: TRUE
         article_id:
             type: integer
-            
+        barcode:
+             type: integer
+        views:
+            type: integer
+        price:
+            type: integer
+        stock:
+            type: integer
         

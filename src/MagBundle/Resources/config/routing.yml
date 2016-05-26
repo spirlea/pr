@@ -54,3 +54,24 @@ components:
 peripherals:
     path: /peripherals
     defaults: { _controller: MagBundle:Article:peripherals }
+admin:
+    path: /admin
+    defaults: { _controller: MagBundle:Dashboard:adminLogIn}
+admin_log:
+    path: /admin_log_in
+    defaults: { _controller: MagBundle:Dashboard:adminCheck}
+dashboard:
+    path: /dashboard
+    defaults: { _controller: MagBundle:Dashboard:dashboard}
+restricted:
+    path: /restricted
+    defaults: { _controller: MagBundle:Dashboard:restricted}
+exit_admin:
+    path: /exit_a
+    defaults: { _controller: MagBundle:Dashboard:exita}
+deleteArticle:
+    path: /deleteArticle/{id}
+    defaults: { _controller: MagBundle:Dashboard:deleteArticle}
+addArticle:
+    path: /dashboard/addarticle
+    defaults: { _controller: MagBundle:Dashboard:addArticle}

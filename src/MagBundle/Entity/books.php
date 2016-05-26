@@ -304,4 +304,32 @@ class books
     {
         return $this->views;
     }
+    /**
+     * @var integer
+     */
+    private $barcode;
+
+
+    /**
+     * Set barcode
+     *
+     * @param integer $barcode
+     * @return books
+     */
+    public function setBarcode($barcode)
+    {
+        $this->barcode = $barcode;
+
+        return $this;
+    }
+
+    /**
+     * Get barcode
+     *
+     * @return integer 
+     */
+    public function getBarcode()
+    {
+        return $this->barcode;
+    }
 }

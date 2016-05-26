@@ -112,3 +112,5 @@ MagBundle\Entity\components:
             type: integer
         views:
             type: integer
+        barcode:
+             type: integer

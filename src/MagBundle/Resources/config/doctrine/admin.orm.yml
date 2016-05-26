@@ -1,0 +1,24 @@
+# src/MagBundle/Resources/config/doctrine/admin.orm.yml
+MagBundle\Entity\admin:
+    type: entity
+    table: admin
+    id:
+        id:
+            type: integer
+            generator: { strategy: AUTO }
+    fields:
+        login:
+            type: string
+            length: 20
+        password:
+            type: string
+            length: 32
+        email:
+            type: string
+            length: 32
+        access:
+            type: string
+            length: 10
+            
+                
+            

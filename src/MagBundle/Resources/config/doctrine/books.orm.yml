@@ -34,3 +34,5 @@ MagBundle\Entity\books:
             type: integer
         views:
             type: integer
+        barcode:
+             type: integer

@@ -1,0 +1,66 @@
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
+    <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+
+    <link href="{{ asset('css/style.css')}}" rel="stylesheet"/>
+</head>
+<div class="adm_panel">
+    <div class="modal-header">
+                            <h3>Log IN</h3>
+<hr>
+                        </div> 
+<form role="form" method="POST" action="{{url('admin_log')}}">
+                        <div class="form-group">
+                            <div class="input-group">
+                                {% if  app.session.flashbag.has('LoginFlashBag') ==null %}
+
+                                    <input name="login" type="text" class="form-control" id="uLogin" placeholder="Login" required>
+                                {%else%}
+                                    {% for flashMessage in app.session.flashbag.get('LoginFlashBag') %}
+                                        <input value="{{flashMessage}}" name="login" type="text" class="form-control" id="uLogin" placeholder="Login" required>
+                                    {%endfor%}
+                                    <script>
+                                        $(document).ready(function () {
+                                            document.getElementById("LoginButton").click();
+                                            document.getElementById("uLogin").style.borderColor = "red";
+                                            document.getElementById("uPassword").style.borderColor = "red";
+                                            var login = $("#uLogin");
+                                            var password = $("#uPassword");
+                                            $("#uLogin").on("click", function () {
+                                                login.css({'border': '1px solid #B9BCBD'});
+                                            });
+
+                                            $("#uPassword").on("click", function () {
+                                                password.css({'border': '1px solid #B9BCBD'});
+                                            });
+
+                                        });
+
+                                    </script>
+
+
+                                {%endif%}
+
+
+                                <label for="uLogin" class="input-group-addon glyphicon glyphicon-user"></label>  
+
+                            </div>
+                        </div> 
+
+                        <div class="form-group">
+                            <div class="input-group">
+                                <input name="pass" type="password" class="form-control" id="uPassword" placeholder="Password" required>
+                                <label for="uPassword" class="input-group-addon glyphicon glyphicon-lock"></label>
+                            </div> 
+                        </div> 
+
+                        
+                        <div class="modal-footer">
+                            <input type="submit"  class="form-control btn btn-primary btn-block" value="Log In">
+
+                        </div> 
+                    </form> 
+ </div>

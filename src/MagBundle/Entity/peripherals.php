@@ -1032,4 +1032,32 @@ class peripherals
     {
         return $this->btn_number;
     }
+    /**
+     * @var integer
+     */
+    private $barcode;
+
+
+    /**
+     * Set barcode
+     *
+     * @param integer $barcode
+     * @return peripherals
+     */
+    public function setBarcode($barcode)
+    {
+        $this->barcode = $barcode;
+
+        return $this;
+    }
+
+    /**
+     * Get barcode
+     *
+     * @return integer 
+     */
+    public function getBarcode()
+    {
+        return $this->barcode;
+    }
 }

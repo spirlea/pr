@@ -696,4 +696,32 @@ class computers
     {
         return $this->Weigth;
     }
+    /**
+     * @var integer
+     */
+    private $barcode;
+
+
+    /**
+     * Set barcode
+     *
+     * @param integer $barcode
+     * @return computers
+     */
+    public function setBarcode($barcode)
+    {
+        $this->barcode = $barcode;
+
+        return $this;
+    }
+
+    /**
+     * Get barcode
+     *
+     * @return integer 
+     */
+    public function getBarcode()
+    {
+        return $this->barcode;
+    }
 }

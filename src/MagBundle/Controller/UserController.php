@@ -117,6 +117,7 @@ class UserController extends Controller {
       
         setcookie('id', null, time() - 2 * 3600, '/', $_SERVER['SERVER_NAME']);
         setcookie('login', null, time() - 2 * 3600, '/', $_SERVER['SERVER_NAME']);
+        setcookie('access', null, time() - 2 * 3600, '/', $_SERVER['SERVER_NAME']);
 
         }
 

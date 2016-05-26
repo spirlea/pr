@@ -136,4 +136,144 @@ class articles
     {
         return $this->article_id;
     }
+    /**
+     * @var integer
+     */
+    private $barcode;
+
+    /**
+     * @var integer
+     */
+    private $views;
+
+
+    /**
+     * Set barcode
+     *
+     * @param integer $barcode
+     * @return articles
+     */
+    public function setBarcode($barcode)
+    {
+        $this->barcode = $barcode;
+
+        return $this;
+    }
+
+    /**
+     * Get barcode
+     *
+     * @return integer 
+     */
+    public function getBarcode()
+    {
+        return $this->barcode;
+    }
+
+    /**
+     * Set views
+     *
+     * @param integer $views
+     * @return articles
+     */
+    public function setViews($views)
+    {
+        $this->views = $views;
+
+        return $this;
+    }
+
+    /**
+     * Get views
+     *
+     * @return integer 
+     */
+    public function getViews()
+    {
+        return $this->views;
+    }
+    /**
+     * @var string
+     */
+    private $producer;
+
+
+    /**
+     * Set producer
+     *
+     * @param string $producer
+     * @return articles
+     */
+    public function setProducer($producer)
+    {
+        $this->producer = $producer;
+
+        return $this;
+    }
+
+    /**
+     * Get producer
+     *
+     * @return string 
+     */
+    public function getProducer()
+    {
+        return $this->producer;
+    }
+    /**
+     * @var integer
+     */
+    private $price;
+
+    /**
+     * @var integer
+     */
+    private $stock;
+
+
+    /**
+     * Set price
+     *
+     * @param integer $price
+     * @return articles
+     */
+    public function setPrice($price)
+    {
+        $this->price = $price;
+
+        return $this;
+    }
+
+    /**
+     * Get price
+     *
+     * @return integer 
+     */
+    public function getPrice()
+    {
+        return $this->price;
+    }
+
+    /**
+     * Set stock
+     *
+     * @param integer $stock
+     * @return articles
+     */
+    public function setStock($stock)
+    {
+        $this->stock = $stock;
+
+        return $this;
+    }
+
+    /**
+     * Get stock
+     *
+     * @return integer 
+     */
+    public function getStock()
+    {
+        return $this->stock;
+    }
 }
